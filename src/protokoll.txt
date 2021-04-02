@@ -1,0 +1,21 @@
+Kommunikationsprotokoll für Befehle an Arduino:
+0+1.Byte der String Nachricht:
+    00: Sollwert setzen
+        Byte 2 bis 7 geben den Wert im Format XXXXXX (Int) an
+    01: Nullpunktoffset
+        Byte 2 bis 7 geben den Wert im Format XXXX.XX (Float) an
+    02: PID Werte
+        Byte 2 bis 8  P im Format XXXX.XX (Float)
+        Byte 9 bis 15 I im Format XXXX.XX (Float)
+        Byte 16 bis 22 D im Format XXXX.XX (Float)
+        Byte 23 PoM gleich Null:False, ungleich Null: True
+    03: Overwrite
+        Byte 2 bis 7  Zone0 im Format XXXXXX (Int)
+        Byte 8 bis 13 Zone1 im Format XXXXXX (Int)
+        Byte 14 bis 19 Zone2 im Format XXXXXX (Int)
+        Byte 20 bis 25 Zone3 im Format XXXXXX (Int)
+        Byte 26 bis 31 GND im Format XXXXXX (Int)
+    04: automatic Modus (Overwrite aus)
+    05: Ausgänge abschalten
+    06: Ausgänge mit sweep abschalten
+    07: Ausgänge full on
